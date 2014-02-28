@@ -1,0 +1,13 @@
+<section id="add">
+	<form action="/" method="post">
+		<textarea name="idea_text" placeholder="ideas go here&hellip;"></textarea>
+		<input type="submit" value="Add an Idea!">
+	</form>
+</section>
+
+<% @ideas.each do |idea| %>
+
+	<p><%=idea.idea_text%> <a href="/<%=idea.id%>/delete">[x]</a></p>
+	<p class="timestamp"><%=idea.created_at%></p>
+
+<% end %>
